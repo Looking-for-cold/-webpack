@@ -24,7 +24,7 @@ class SiderDemo extends React.Component {
                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
                 </Breadcrumb>
                 <div style={{ padding: 24, background: "#fff", minHeight: 360 }}>
-                    <Route exact path="/" component={My} />
+                    <Route exact path="/My" component={My} />
                     <Route path="/Index" component={Index} />
                 </div>
             </Content>

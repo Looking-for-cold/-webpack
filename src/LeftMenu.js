@@ -29,7 +29,7 @@ class LeftMenu extends React.Component {
           <Menu.Item key="1">
 
           <Icon type="desktop" />
-            <Link to="/parent" style={{'display':'inline-block'}}>
+            <Link to="/Index" style={{'display':'inline-block'}}>
             商品管理</Link>
           </Menu.Item>
           <SubMenu
@@ -54,7 +54,7 @@ class LeftMenu extends React.Component {
               </span>
             }
           >
-            <Menu.Item key="7"><Link to="/ClickCounter">
+            <Menu.Item key="7"><Link to="/My">
             文章分类</Link></Menu.Item>
             <Menu.Item key="8">文章列表</Menu.Item>
           </SubMenu>
