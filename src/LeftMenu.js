@@ -10,7 +10,7 @@ class LeftMenu extends React.Component {
   };
   componentDidMount(){
     
-   
+    let qiudianlei = "sdjsakdjkasjdlasj"
   }
  
   render() {

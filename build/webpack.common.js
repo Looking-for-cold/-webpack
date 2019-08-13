@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports={
     entry: {
         mian:path.resolve(__dirname, '../src/index.js')//可以设置多个入口
@@ -26,16 +28,25 @@ module.exports={
             loader: 'babel-loader',
              options: {
                presets:[
-                 ['@babel/preset-env',{
-                 targets:{
-                   chrome:'67',
-                   ie:'11'
-                 }
-               }],
+              //    ['@babel/preset-env',{
+              //    targets:{
+              //      chrome:'67',
+              //      ie:'11'
+              //    },
+              //   //  "useBuiltIns": "usage"
+              //  }],
                 "@babel/preset-react"
               ],
               "plugins": [
-               
+                [
+                  "@babel/plugin-transform-runtime",
+                  {
+                    "corjs":2,
+                    "helpers": true,
+                    "regenerator": true,
+                    "useESModules": false
+                  }
+                ],
                 '@babel/plugin-proposal-class-properties',
                 ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
               ]
@@ -56,11 +67,12 @@ module.exports={
       new HtmlWebpackPlugin({
           template: 'index.html'
       }),
+      new ExtractTextPlugin({ filename: '[name].[contenthash].css', allChunks: false }),
       new CleanWebpackPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin(),
     ],
-    optimization:{ //tree shaking 单引单用 packafe.json里设置了"sideEffects":false
-      usedExports:true
-    }
+    // optimization:{ //tree shaking 单引单用 packafe.json里设置了"sideEffects":false
+    //   usedExports:true
+    // }
   };
