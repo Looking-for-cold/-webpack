@@ -11,7 +11,8 @@
   "scripts": {
     "watch": "webpack-dev-server --inline",
     "build": "webpack --config ./build/webpack.prod.js",
-    "sever": "webpack-dev-server  --config ./build/webpack.dev.js"
+    "sever": "webpack-dev-server  --config ./build/webpack.dev.js",
+    "debug": "node --inspect --inspect-brk node_modules/webpack/bin/webpack.js"
   },
   "author": "qiudianlei",
   "license": "ISC",
@@ -61,9 +62,5 @@
     "clean-webpack-plugin": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+  }
 }

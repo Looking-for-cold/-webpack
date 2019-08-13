@@ -56,18 +56,18 @@ module.exports = {
       },
       {
         test: /\.jsx?$/,
-        exclude: path.resolve(__dirname, 'node_modules'),
+        exclude: path.resolve(__dirname, 'node_modules'), 
         // include:path.resolve(__dirname,'src'),
         use: {
           loader: 'babel-loader',
            options: {
              presets:[
-               ['@babel/preset-env',{
-               targets:{
-                 chrome:'67',
-                 ie:'11'
-               }
-             }],
+            //    ['@babel/preset-env',{
+            //    targets:{
+            //      chrome:'67',
+            //      ie:'11'
+            //    }
+            //  }],
               "@babel/preset-react"
             ],
             plugins: ['@babel/plugin-proposal-class-properties']

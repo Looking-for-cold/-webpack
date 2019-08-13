@@ -20,7 +20,7 @@ module.exports={
         },
         {
           test: /\.jsx?$/,
-          exclude: path.resolve(__dirname, '../node_modules'),
+          // exclude: path.resolve(__dirname, '../node_modules'),
           // include:path.resolve(__dirname,'src'),
           use: {
             loader: 'babel-loader',
@@ -35,15 +35,7 @@ module.exports={
                 "@babel/preset-react"
               ],
               "plugins": [
-                [
-                  "@babel/plugin-transform-runtime",
-                  {
-                    "corejs": 2,
-                    "helpers": true,
-                    "regenerator": true,
-                    "useESModules": false,
-                  }
-                ],
+               
                 '@babel/plugin-proposal-class-properties',
                 ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
               ]
