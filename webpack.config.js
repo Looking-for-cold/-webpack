@@ -46,7 +46,7 @@ module.exports = {
     rules:[
       {
         test:/\.css$/,
-        use:['style-loaderxxxxx', 'css-loader'],
+        use:['style-loader', 'css-loader'],
         // exclude: path.resolve(__dirname, 'node_modules'),
       },
       {
